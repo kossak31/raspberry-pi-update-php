@@ -32,7 +32,8 @@ php -v
 ## change config
 ```
 sudo nano /etc/php/7.4/fpm/conf.d/90-pi-custom.ini
-sudo nano /etc/php/8.0/cli/php.ini 
+sudo nano /etc/php/8.0/cli/php.ini
+sudo nano /etc/php/8.0/apache2/php.ini
 ```
 
 ## edit file
@@ -57,10 +58,13 @@ php -i
 ```
 
 ## remove older php versions
+```
 sudo apt-get purge php7.*
 sudo apt-get autoclean
 sudo apt-get autoremove
-
+```
 
 ## activate php8 mod in apache2
+```
 sudo a2enmod php8.0
+```
