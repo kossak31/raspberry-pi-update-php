@@ -31,7 +31,8 @@ php -v
 
 ## change config
 ```
-sudo nano /etc/php/7.4/fpm/conf.d/90-pi-custom.ini.
+sudo nano /etc/php/7.4/fpm/conf.d/90-pi-custom.ini
+sudo nano /etc/php/8.0/cli/php.ini 
 ```
 
 ## edit file
@@ -45,6 +46,8 @@ max_execution_time=600
 
 ## restart service
 ```
+sudo apt install php8.0-fpm
+sudo systemctl restart php8.0-fpm
 sudo service php7.4-fpm reload
 ```
 
@@ -52,3 +55,12 @@ sudo service php7.4-fpm reload
 ```
 php -i
 ```
+
+## remove older php versions
+sudo apt-get purge php7.*
+sudo apt-get autoclean
+sudo apt-get autoremove
+
+
+## activate php8 mod in apache2
+sudo a2enmod php8.0
